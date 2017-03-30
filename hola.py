@@ -14,9 +14,10 @@ def index():
     
 @app.route("/params")
 @app.route("/params/<name>/")
-def params(name = "nil"):
+@app.route("/params/<name>/<int:num>")
+def params(num, name = "nil"):
     param = request.args.get('params1', 'No contiene este parametro')
-    return 'El parametro es {}'.format(name)
+    return 'El parametro es {} y {}'.format(name, num)
 
 # Servidor en 0.0.0.0 y 8080
 
