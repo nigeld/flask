@@ -1,0 +1,10 @@
+{% extends 'layouts/aplication_layout.html' %}
+    {% block content%}
+        {% if age >= 18 %}
+            <p>Tienes {{ age }} años.</p>
+        {% endif %}
+        
+        {% for item in items %}
+            {{ item }}
+        {% endfor %}
+    {% endblock %}
