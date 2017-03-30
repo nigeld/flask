@@ -12,15 +12,11 @@ def index():
     return 'Hola Mundo'
     
     
-@app.route("/saluda")
-def saluda():
-    return 'Hola de nuevo'
-    
-    
 @app.route("/params")
-def params():
+@app.route("/params/<name>/")
+def params(name = "nil"):
     param = request.args.get('params1', 'No contiene este parametro')
-    return 'El parametro es {}'.format(param)
+    return 'El parametro es {}'.format(name)
 
 # Servidor en 0.0.0.0 y 8080
 
